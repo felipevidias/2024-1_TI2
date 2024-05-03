@@ -1,63 +1,80 @@
-const adicionar = document.querySelector('#adicionar')
+const API_KEY = "AIzaSyC4HbuGNKl-ImE9MGxRPub9ttCFkqQSnlY";
+const PLAYLIST_ID = "PL01y0oZQjUTz1lghLi8hWYzm-mOlmoDKL";
 
-adicionar.addEventListener('click', function() {
+function loadVideosFromYouTube() {
+  const playlist_area = document.querySelector(".playlist");
+  
+  // Função para fazer a solicitação da próxima página de resultados
+  function fetchPlaylistPage(pageToken) {
+    let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&key=${API_KEY}&maxResults=50`;
+    if (pageToken) {
+      url += `&pageToken=${pageToken}`;
+    }
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Iterando sobre os itens da página atual
+        data.items.forEach((item, index) => {
+          const videoId = item.snippet.resourceId.videoId;
+          const title = item.snippet.title;
+          const thumbnail = item.snippet.thumbnails.default.url;
+          
+          // Criando um elemento de vídeo para cada item
+          const div = document.createElement("div");
+          div.classList.add("playlist-video");
+          div.innerHTML = `
+            <img src="${thumbnail}" alt="${title}">
+            <label class="playlist-video-info">${title}</label>
+          `;
+          
+          // Adicionando um evento de clique para trocar o vídeo principal
+          div.addEventListener("click", () => {
+            setVideo(videoId, title);
+            updateActiveVideo(div);
+          });
+          
+          playlist_area.appendChild(div);
+          
+          // Se for o primeiro vídeo, defini-lo como ativo
+          if (index === 0 && !pageToken) {
+            setVideo(videoId, title);
+            updateActiveVideo(div);
+          }
+        });
+
+        // Verificando se há mais páginas de resultados
+        if (data.nextPageToken) {
+          // Se houver mais páginas, fazer outra solicitação para a próxima página
+          fetchPlaylistPage(data.nextPageToken);
+        }
+      })
+      .catch(error => {
+        console.error("Erro ao carregar vídeos:", error);
+      });
+  }
+
+  // Iniciando a solicitação para a primeira página
+  fetchPlaylistPage(null);
+}
+
+function setVideo(videoId, title) {
+  const video_main = document.querySelector("#video-container");
+  video_main.innerHTML = `
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+    <label>${title}</label>
+  `;
+}
+
+function updateActiveVideo(selectedVideo) {
+  const playlist_videos = document.querySelectorAll(".playlist-video");
+  playlist_videos.forEach(video => {
+    video.classList.remove("active");
+  });
+  selectedVideo.classList.add("active");
+}
+
+loadVideosFromYouTube();
+
+document.querySelector('#adicionar').addEventListener('click', function() {
   window.location.href = 'indexcadastrovideoaulas.html';
 });
-
-
-import videos from "./videos.js";
-
-function loadVideos() {
-  const playlist_area = document.querySelector(".playlist");
-
-  videos.forEach((video, index) => {
-    const div = document.createElement("div");
-
-    div.innerHTML = `
-      <div class="playlist-video ${index + 1 === 1 && "active"}">
-        <video src=${video.src} muted></video>
-        <label class="playlist-video-info">${video.title}</label>
-      </div>
-    `;
-
-    playlist_area.appendChild(div);
-  });
-
-  addOnClick();
-}
-
-function addOnClick() {
-  const video_main = document.querySelector(".main-video-content");
-  const playlist_video = document.querySelectorAll(".playlist-video");
-
-  playlist_video.forEach((item, i) => {
-    if (!i) {
-      setVideo(video_main, item);
-    }
-
-    item.onclick = () => {
-      playlist_video.forEach((video) => video.classList.remove("active"));
-      item.classList.add("active");
-
-      setVideo(video_main, item);
-    };
-  });
-}
-
-function setVideo(video_main, item) {
-  video_main.children[0].src = item.children[0].getAttribute("src");
-  video_main.children[1].innerHTML = item.children[1].innerHTML;
-}
-
-loadVideos();
-
-
-
-//Mensagem estilizada no console
-console.log("                                             ");
-console.log(" _____ _       _   _         _     _ _       ");
-console.log("| __  | |_ _ _| |_| |_ _____|_|___|_| |_ _ _ ");
-console.log("|    -|   | | |  _|   |     | |  _| |  _| | |");
-console.log("|__|__|_|_|_  |_| |_|_|_|_|_|_|___|_|_| |_  |");
-console.log("          |___|                         |___|");
-console.log("                                             ");
