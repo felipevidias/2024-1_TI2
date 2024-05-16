@@ -1,22 +1,27 @@
 /*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap');
+
 @font-face {
     font-family: "Shapiro";
     src: url("fonts/Shapiro 95 Super Wide.ttf") format("truetype");
 }
+
 @font-face {
     font-family: "Shapiro-Middle";
     src: url("fonts/Shapiro 75 Heavy Extd.ttf") format("truetype");
 }
+
 @font-face {
     font-family: "Cabin";
     src: url("fonts/Cabin-Medium.otf") format("opentype");
 }
+
 @font-face {
     font-family: "Cabin-Bold";
     src: url("fonts/Cabin-Bold.otf") format("opentype");
 }
+
 @font-face {
     font-family: "Cabin-Light";
     src: url("fonts/Cabin-Regular.otf") format("opentype");
@@ -31,6 +36,8 @@
 
 body {
     overflow-x: hidden;
+    background-color: white;
+    background: linear-gradient(white, #eaf1f1);
 }
 
 .textos-aulas strong {
@@ -57,6 +64,7 @@ h2 {
     font-family: "Cabin-Light", Arial, sans-serif;
     font-size: larger;
     max-width: 30rem;
+    margin: 0 auto;
     margin-top: 10px;
     /*padding-bottom: 100px;*/
     color: #e4e4e4;
@@ -64,44 +72,82 @@ h2 {
 }
 
 .textos-introducao {
-    background-color: rgba(0, 0, 0, 0.151);
+    position: absolute;
+    z-index: 5;
+    background-color: #00000038;
     backdrop-filter: blur(10px);
     /*padding-left: 50px;*/
-    max-width: 40rem;
-    max-height: 600px;
+    width: 100%;
+    height: 640px;
     overflow: hidden;
-    padding: 50px;
-    margin-right: 80px;
+    padding: 0;
+    align-items: center;
+}
+
+.textos-introducao h2 {
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .introducao {
-    margin-top: 80px;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 650px;
-    padding-left: 100px;
-    padding-right: 100px;
-    background-image: url('images/bg-introducao6.jpg');
+    /*background-image: url('images/bg-introducao6.jpg');*/
+    background-color: #12cdd4;
     display: flex;
     overflow: hidden;
+    border-top: black double 5px;
+    border-bottom: white double 5px;
 }
 
 .video-container {
-    width: 600px;
-    height: 338px;
+    height: 630px;
+    width: 1120px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-  
+
 .video-container video {
-    width: 100%;
-    height: 100%;
+    width: 200%;
+    height: 200%;
     position: absolute;
-    top: 0;
-    left: 0;
+}
+
+.deco {
+    height: 20px;
+    width: 100%;
+    background-color: #12cdd4;
+}
+
+.decom {
+    height: 1px;
+    margin-top: 2px;
+    width: 100%;
+    background-color: #12cdd4;
+
+}
+
+.deco2 {
+    height: 30px;
+    width: 100%;
+    background-color: #12cdd4;
+    position: absolute;
+    bottom: 0;
+}
+
+.testImg {
+    position: absolute;
+    left: -20px;
+    width: 110%;
+    bottom: 0;
 }
 
 
@@ -149,8 +195,6 @@ h3 {
 }
 
 .textos-aulas {
-    background-color: rgba(0, 0, 0, 0.151);
-    backdrop-filter: blur(10px);
     /*padding-left: 50px;*/
     max-width: 40rem;
     max-height: 600px;
@@ -159,20 +203,25 @@ h3 {
 }
 
 .aulas {
-    margin-top: 35px;
+    margin: 100px;
+    margin-top: 50px;
+    margin-bottom: 80px;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 200px);
     height: 1050px;
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
     overflow: hidden;
+    /*background-color: #034f5246;*/
+
 }
+
 
 .imagens-artistas img {
     width: 600px !important;
@@ -185,13 +234,14 @@ h4 {
     max-width: 35rem;
     /*padding-top: 100px;*/
     /*color: black;*/
-    background: linear-gradient(6deg, #377cca, #f54444, #e9b6b2);
+    background: #12cdd4;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     /*text-align: center;*/
     margin-left: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 h5 {
@@ -200,13 +250,14 @@ h5 {
     max-width: 35rem;
     /*padding-top: 100px;*/
     /*color: black;*/
-    background: linear-gradient(6deg, #e7c8c7, #61fefa, #a793ff);
+    background: #fdfd96;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     /*text-align: center;*/
     margin-left: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 h6 {
@@ -215,13 +266,14 @@ h6 {
     max-width: 35rem;
     /*padding-top: 100px;*/
     /*color: black;*/
-    background: linear-gradient(6deg, #eb99b8, #6265f8, #bbabff);
+    background: #ff9661;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     /*text-align: center;*/
     margin-left: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 .container-aulas {
@@ -263,7 +315,16 @@ h6 {
     color: #e4e4e4;
     bottom: -240px;
     transition: bottom 0.3s ease;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    background: black;
+}
+
+.DifEffect {
+    height: 8px;
+    width: 350px;
+    bottom: 42px;
+    position: absolute;
+    transition: bottom 0.3s ease;
+    background: black;
 }
 
 .dificuldade-aulas:hover {
@@ -272,7 +333,12 @@ h6 {
 
 .dificuldade-aulas:hover .intro {
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+    background: black;
+}
+
+.dificuldade-aulas:hover .DifEffect {
+    bottom: 281px;
+    background: black;
 }
 
 .dificuldade-aulas:hover p {
@@ -282,6 +348,7 @@ h6 {
 
 .dificuldade-aulas:hover img {
     transform: scale(1.1);
+    filter: blur(10px);
 }
 
 
@@ -301,12 +368,24 @@ h6 {
 
 
 footer {
-    background-color: #29272e;
-    color: #cacaca;
+    background-color: #000000;
+    color: white;
     font-family: "Cabin-Light", Arial, sans-serif;
     font-size: small;
     display: flex;
     justify-content: space-between;
+    border-top: white double 6px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #12cdd4;
 }
 
 footer p {
@@ -316,15 +395,16 @@ footer p {
 footer p:hover {
     cursor: pointer;
     text-decoration: underline;
+    color: #12cdd4;
 }
-  
+
 .footer-left,
 .footer-right {
     text-align: left;
     margin-top: 50px;
     margin-bottom: 30px;
 }
-  
+
 .footer-right {
     text-align: right;
     margin-right: 100px;
@@ -356,20 +436,35 @@ footer p:hover {
 
 
 
+.overlay {
+    position: fixed;
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+}
+
+.overlay:hover:has(#co1:not(:hover)):has(#co2:not(:hover)):has(#co3:not(:hover)) {
+    cursor: pointer;
+}
 
 #co1,
 #co2,
 #co3 {
+    display: none;
+    visibility: hidden;
     background-size: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 70%;
+    margin: 5% 10%;
+    background-color: rgb(44, 44, 44);
     /*padding: 100px;*/
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     position: fixed;
+    border-radius: 10px;
 }
 
 #x1,
@@ -393,7 +488,7 @@ footer p:hover {
     align-items: center;
     margin-left: 50px;
 }
-  
+
 .video-overlay video {
     width: 100%;
     height: 100%;
@@ -425,8 +520,10 @@ footer p:hover {
 
 #co1 {
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
+    background-color: #07999e;
 }
 
 .infos-overlay {
@@ -470,9 +567,9 @@ h1 {
 #co14 ion-icon,
 #co15 ion-icon,
 #co16 ion-icon {
-  margin-top: 12px;
-  margin-right: 4px;
-  font-size: 20px;
+    margin-top: 12px;
+    margin-right: 4px;
+    font-size: 20px;
 }
 
 .crosstext-overlay p {
@@ -539,19 +636,22 @@ h1 {
 
 
 #co2 {
+    visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     /*margin-left: -100px;*/
+    background-color: rgb(153, 146, 41);
 }
 
 #h22 {
-    margin-left: -153px;
+    margin-left: -33px;
 }
 
 #h23 {
-    margin-left: -41px;
+    margin-left: 10px;
 }
+
 
 #co21,
 #co22,
@@ -569,9 +669,9 @@ h1 {
 #co24 ion-icon,
 #co25 ion-icon,
 #co26 ion-icon {
-  margin-top: 12px;
-  margin-right: 4px;
-  font-size: 20px;
+    margin-top: 12px;
+    margin-right: 4px;
+    font-size: 20px;
 }
 
 #co24 {
@@ -631,9 +731,11 @@ h1 {
 
 #co3 {
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     /*margin-left: -Xpx;*/
+    background-color: #c45822;
 }
 
 #h32 {
@@ -660,9 +762,9 @@ h1 {
 #co34 ion-icon,
 #co35 ion-icon,
 #co36 ion-icon {
-  margin-top: 12px;
-  margin-right: 4px;
-  font-size: 20px;
+    margin-top: 12px;
+    margin-right: 4px;
+    font-size: 20px;
 }
 
 #co34 {
@@ -689,6 +791,111 @@ h1 {
 .atuais-overlay #co33:hover {
     /*transform: scale(1.03);*/
     transform: translateX(-2%);
+}
+
+
+/* Botões "Ir para aulas" nos overlays */
+/*INICIANTE*/
+.ir-para-aulas_01 {
+    background-color: #07999e; ; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+.ir-para-aulas_01:hover {
+    background-color: #217679;/* Cor de fundo ao passar */
+}
+
+/* Botões "Fechar" nos overlays */
+#x1,
+#x2,
+#x3 {
+    color: #fff; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cursor ao passar */
+    z-index: 3000; /* Para ficar acima do overlay */
+}
+
+#x1:hover,
+#x2:hover,
+#x3:hover {
+    color: #ccc; /* Cor do ícone ao passar */
+}
+
+
+/*INTERMEDIARIO*/
+.ir-para-aulas_02 {
+    background-color: #999229;/* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+.ir-para-aulas_02:hover {
+    background-color: #77711c;  /* Cor de fundo ao passar */
+}
+
+/* Botões "Fechar" nos overlays */
+#x1,
+#x2,
+#x3 {
+    color: #fff; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cursor ao passar */
+    z-index: 3000; /* Para ficar acima do overlay */
+}
+
+#x1:hover,
+#x2:hover,
+#x3:hover {
+    color: #ccc; /* Cor do ícone ao passar */
+}
+
+/*ACANÇADO*/
+.ir-para-aulas_03 {
+    background-color:#c45822;/* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+.ir-para-aulas_03:hover {
+    background-color: #9b4419;  /* Cor de fundo ao passar */
+}
+
+/* Botões "Fechar" nos overlays */
+#x1,
+#x2,
+#x3 {
+    color: #fff; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cursor ao passar */
+    z-index: 3000; /* Para ficar acima do overlay */
+}
+
+#x1:hover,
+#x2:hover,
+#x3:hover {
+    color: #ccc; /* Cor do ícone ao passar */
 }
 
 
@@ -731,52 +938,51 @@ h1 {
 
 
 /*Cor e configurações da navbar*/
-.header-navbar
-{
-    position: absolute;
+.header-navbar {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    background: #490457;
+    background: #000000;
     /*background: #5b008f;*/
-    padding: 20px 40px;
+    padding: 0px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
 }
+
 
 /*Configurações da Logo da navbar*/
 .logo img {
-    max-width: 200px;
-    display: block; 
-    margin: auto; 
+    max-width: 70px;
+    display: block;
+    margin: auto;
 }
 
 /*Configurações e alinhamentos da navbar*/
-.group
-{
+.group {
     display: flex;
     align-items: center;
 }
 
 /*Distância e configurações dos itens da navbar*/
-header ul
-{
+header ul {
     position: relative;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
-header ul li
-{
+header ul li {
     list-style: none;
+    text-align: center;
+    height: fit-content;
 }
 
 /*Configurações do TEXTO dos itens da navbar*/
-header ul li a 
-{
+header ul li a {
     position: relative;
     text-decoration: none;
     font: 1em;
@@ -786,8 +992,7 @@ header ul li a
 }
 
 /*Linha que fica embaixo dos itens quando passa o mouse em cima */
-header ul li a::before
-{
+header ul li a::before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -799,15 +1004,13 @@ header ul li a::before
     transform-origin: right;
 }
 
-header ul li a:hover::before
-{
+header ul li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
 /*Configurações da barra de pesquisa*/
-header .search
-{
+header .search {
     position: relative;
     display: flex;
     justify-content: center;
@@ -818,53 +1021,47 @@ header .search
     color: #E8E8E8;
 }
 
-.searchBox.active
-{
+.searchBox.active {
     right: 0;
 }
 
-.searchBox
-{
+.searchBox {
     position: absolute;
     right: -100%;
     width: 100%;
     height: 100%;
     display: flex;
-    background: #490457;
+    background: black;
     align-items: center;
     padding: 0 30px;
     transition: 0.5 ease-in-out;
 }
 
-.searchBox input
-{
+.searchBox input {
     width: 100%;
     border: none;
     outline: none;
     height: 50px;
     color: #E8E8E8;
     font-size: 1.25em;
-    background:#490457;
+    background: black;
     border-bottom: 1px solid #E8E8E8;
 }
 
 /*Configurações do botão de pesquisa (lupa)*/
-.searchBtn
-{
+.searchBtn {
     position: relative;
     left: 30px;
     top: 2.5px;
     transition: 0.5s ease-in-out;
 }
 
-.searchBtn.active
-{
+.searchBtn.active {
     left: 0;
 }
 
 /*Configurações do botão de fechar*/
-.closeBtn
-{
+.closeBtn {
     opacity: 0;
     visibility: hidden;
     transition: 0;
@@ -872,8 +1069,7 @@ header .search
 }
 
 /*Configuração da função da lupa sumir e o botao 'x' aparecer quando a barra de pesquisa se expande*/
-.closeBtn.active
-{
+.closeBtn.active {
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
@@ -889,53 +1085,54 @@ header .search
 }
 
 /*Responsividade da navbar*/
-.menuToggle
-{
+.menuToggle {
     position: relative;
     display: none;
     color: #E8E8E8;
 }
 
 /*Configurações pra aparecer o menu sanduiche em uma determinada resolução*/
-@media (max-width: 800px)
-{
-    .searchBtn
-    {
+@media (max-width: 800px) {
+    .searchBtn {
         left: 0;
     }
-    .menuToggle
-    {
-        position:absolute;
+
+    .menuToggle {
+        position: absolute;
         display: block;
         font-size: 2em;
         cursor: pointer;
         transform: translateX(30px);
         z-index: 10;
     }
-    header .navigation
-    {
-      position: absolute;
-      opacity: 0;
-      visibility: hidden;
-      left: 100%;
+
+    header .navigation {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+        display: flex;
+        align-items: center;
     }
-    header.open .navigation /* Quando clicar no menu sanduíche, expandir a tela*/
-    {
+
+    header.open .navigation
+
+    /* Quando clicar no menu sanduíche, expandir a tela*/
+        {
         top: 80px;
         opacity: 1;
         visibility: visible;
         left: 0;
         display: flex;
         flex-direction: column;
-        background: #490457;
+        background: black;
         width: 100%;
         height: calc(100vh - 80px);
         padding: 40px;
-        border-top: 1px solid rgba(0,0,0,0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    header.open .navigation li a 
-    {
+    header.open .navigation li a {
         font-size: 1.25em;
     }
-}  
+}
